@@ -1,0 +1,8 @@
+[submodule "SunamoDotNetZip"]
+	path = SunamoDotNetZip
+	url = git@github.com:sunamo/SunamoDotNetZip.git
+	branch = claude
+[submodule "SunamoBitLockerManager"]
+	path = SunamoBitLockerManager
+	url = git@github.com:sunamo/SunamoBitLockerManager.git
+	branch = claude
