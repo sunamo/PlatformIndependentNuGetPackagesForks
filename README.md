@@ -5,8 +5,8 @@ They are kept apart from [PlatformIndependentNuGetPackages](https://github.com/s
 
 | Package | Original library |
 |---|---|
-| SunamoDotNetZip | DotNetZip (.NET 9 fork without the known security vulnerability) |
-| SunamoBitLockerManager | BitLockerManager |
+| SunamoDotNetZip | DotNetZip by Dino Chiesa (MS-PL, BSD-3-Clause and Apache-2.0 parts), see `SunamoDotNetZip/THIRD-PARTY-NOTICES.md` |
+| SunamoBitLockerManager | BitLockerManager by Roman Minyaylov (MIT), see `SunamoBitLockerManager/LICENSE` |
 
 Rules for this repository:
 

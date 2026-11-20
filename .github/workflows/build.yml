@@ -1,0 +1,27 @@
+name: build
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build every package
+        shell: pwsh
+        run: |
+          Get-ChildItem -Recurse -Filter *.csproj | Where-Object { $_.FullName -notmatch '\(bin|obj|Runner[^\]*)\' -and $_.Name -notmatch '^Runner' } | ForEach-Object {
+            dotnet build $_.FullName -c Release -p:TreatWarningsAsErrors=false
+            if ($LASTEXITCODE -ne 0) { exit 1 }
+          }
