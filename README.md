@@ -5,11 +5,14 @@ They are kept apart from [PlatformIndependentNuGetPackages](https://github.com/s
 
 | Package | Original library |
 |---|---|
-| SunamoDotNetZip | DotNetZip (.NET 9 fork without the known security vulnerability) |
-| SunamoBitLockerManager | BitLockerManager |
+| SunamoDotNetZip | DotNetZip by Dino Chiesa (MS-PL, BSD-3-Clause and Apache-2.0 parts), see `SunamoDotNetZip/THIRD-PARTY-NOTICES.md` |
+| SunamoBitLockerManager | BitLockerManager by Roman Minyaylov (MIT), see `SunamoBitLockerManager/LICENSE` |
 
 Rules for this repository:
 
 - Every package keeps the original license and author credit in its `readme.md` and `.csproj`.
 - Public API stays as close to the upstream source as possible, so `CS1591` (missing XML comments) is suppressed.
 - Files are not split to follow the first-party file-size rule, to keep the diff against upstream small.
+- Versions follow the first-party scheme `year.month.day.build` and are independent of the upstream version numbers.
+- The `Authors` field of each package names the original author first and the maintainer second.
+- Build and test: `dotnet test <Package>/<Package>.Tests` (DotNetZip multi-targets net8.0, net9.0 and net10.0).
